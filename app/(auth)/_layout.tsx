@@ -2,16 +2,12 @@ import { images } from "@/constants";
 import { Slot } from "expo-router";
 import { Dimensions, Image, ImageBackground, View } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function AuthLayout() {
-  const insets = useSafeAreaInsets();
-  const maxHeight = Dimensions.get("window").height - insets.bottom;
   return (
     <KeyboardAwareScrollView
       style={{ flex: 1, backgroundColor: "#ffffff" }}
-      contentContainerStyle={{ maxHeight: maxHeight }}
-      enableOnAndroid={true}
+      enableOnAndroid
       extraScrollHeight={50}
       keyboardShouldPersistTaps="handled"
       showsVerticalScrollIndicator={false}
